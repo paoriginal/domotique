@@ -1,0 +1,11 @@
+# On suit les liens symboliques 
+Options +FollowSymlinks 
+# Activation du mod rewrite d'Apache 
+RewriteEngine On
+
+# Réécriture des URL des articles 
+
+RewriteRule seConnecter$ /domotique/index.php?action=seConnecter
+RewriteRule connexion$ /domotique/index.php?action=connexion
+RewriteRule home$ /domotique/index.php?action=home
+RewriteRule logout$ /domotique/index.php?action=deconnexion [L]
