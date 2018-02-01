@@ -23,6 +23,12 @@
 			}
 		}
 
+		public static function getInfo($log){
+			$adminGateway = new AdminGateway();
+			$info = $adminGateway->isAdmin($log);
+			return $info;
+		}
+
 		public static function ajouterEquipement($nom,$prenom,$pseudo,$mdp,$statut){
 			$adminGateway = new AdminGateway();
 			$adminGateway->ajouterEquipement($nom,$prenom,$pseudo,$mdp,$statut);

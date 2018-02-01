@@ -76,7 +76,7 @@
 						<img src="Vue/images/profile-pic.jpg" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
 						
 						<div class="username mt-1">
-							<h4 class="mb-1">Username</h4>
+							<h4 class="mb-1"><?php echo $info->getNom() . " " . $info->getPrenom(); ?></h4>
 							
 							<h6 class="text-muted">Super Admin</h6>
 						</div>
@@ -84,7 +84,7 @@
 						
 						<div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em class="fa fa-user-circle mr-1"></em> View Profile</a>
 						     <a class="dropdown-item" href="#"><em class="fa fa-sliders mr-1"></em> Preferences</a>
-						     <a class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+						     <a class="dropdown-item" href="seDeconnecter"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
 					</div>
 					
 					<div class="clear"></div>

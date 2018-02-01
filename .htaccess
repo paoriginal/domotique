@@ -8,4 +8,4 @@ RewriteEngine On
 RewriteRule seConnecter$ /domotique/index.php?action=seConnecter
 RewriteRule connexion$ /domotique/index.php?action=connexion
 RewriteRule home$ /domotique/index.php?action=home
-RewriteRule logout$ /domotique/index.php?action=deconnexion [L]
+RewriteRule seDeconnecter$ /domotique/index.php?action=seDeconnecter [L]

@@ -10,6 +10,7 @@
 
 					case 'home':
 						global $vues;
+						$info = $this->getInfo();
 						require $vues['home'];
 						break;
 						
@@ -57,6 +58,23 @@
 			}
 			else{
 				return false;
+			}
+		}
+
+		public function getInfo(){
+			if (isset($_SESSION['login']) && isset($_SESSION['mdp'])) {
+				$log=Validation::sanitize($_SESSION['login'],gettype($_SESSION['login']));
+				$mdpBool=Validation::sanitize($_SESSION['mdp'],'text');
+				if ($mdpBool) {
+					$info=ModelAdmin::getInfo($log);
+					return $info;
+				}
+				else{
+					return null;
+				}
+			}
+			else{
+				return null;
 			}
 		}
 

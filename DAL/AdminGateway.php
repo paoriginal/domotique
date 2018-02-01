@@ -19,4 +19,5 @@
 			$Admin = new Admin($result['idUtilisateur'],$result['nom'],$result['prenom'],$result['mail'],$result['password']);
 			return $Admin;
 		}
+
 	}
