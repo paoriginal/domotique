@@ -1,7 +1,7 @@
 <?php
 	class frontControl
 	{
-		private $listeAction_User = array('seConnecter','connexion');
+		private $listeAction_User = array('seConnecter','connexion','creationCompte','creerCompte');
 		private $listeAction_Admin = array('ajouterEquipement','supprimerEquipement','seDeconnecter','home');
 
 		public function __construct(){

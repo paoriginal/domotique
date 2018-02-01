@@ -20,4 +20,12 @@
 			return $Admin;
 		}
 
+		public function creationCompte($nom, $prenom, $mail, $passwd){
+			$query='INSERT INTO Utilisateur(nom,prenom,mail,password) VALUES(:nom,:prenom,:mail,:passwd)';
+			$this->con->executeQuery($query,array(':nom'=>array($nom, PDO::PARAM_STR),
+												':prenom'=>array($prenom, PDO::PARAM_STR),
+												':mail'=>array($mail, PDO::PARAM_STR),
+												'passwd'=>array($passwd, PDO::PARAM_STR)));
+		}
+
 	}

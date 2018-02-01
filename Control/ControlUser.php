@@ -9,8 +9,18 @@
 					case 'connexion':
 						$this->connexion();
 						break;
+
+					case 'creerCompte':
+						global $vues;
+						require $vues['creationCompte'];
+						break;
+
 					case 'seConnecter':
 						$this->seConnecter();
+						break;
+
+					case 'creationCompte':
+						$this->creationCompte();
 						break;
 
 					default:
@@ -28,6 +38,17 @@
 			catch(Exception $e){
 				throw new Exception($e->getMessage());
 			}
+		}
+
+		public function creationCompte(){
+			$nomBool=Validation::sanitize($_REQUEST['nom'],'text');
+			$prenomBool=Validation::sanitize($_REQUEST['prenom'],'text');
+			$mail=Validation::sanitize($_REQUEST['email'],gettype($_REQUEST['email']));
+			$passwordBool=Validation::sanitize($_REQUEST['passwd'],'text');
+			if ($nomBool && $prenomBool && $passwordBool) {
+				ModelAdmin::creationCompte($_REQUEST['nom'],$_REQUEST['prenom'],$mail,$_REQUEST['passwd']);
+			}
+			header('location: seConnecter');
 		}
 
 		//Fonction permettant d'accéder à la page pour passer admin 

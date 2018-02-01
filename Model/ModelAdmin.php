@@ -29,6 +29,11 @@
 			return $info;
 		}
 
+		public static function creationCompte($nom, $prenom, $mail, $passwd){
+			$adminGateway = new AdminGateway();
+			$adminGateway->creationCompte($nom, $prenom, $mail, password_hash($passwd, PASSWORD_DEFAULT));
+		}
+
 		public static function ajouterEquipement($nom,$prenom,$pseudo,$mdp,$statut){
 			$adminGateway = new AdminGateway();
 			$adminGateway->ajouterEquipement($nom,$prenom,$pseudo,$mdp,$statut);

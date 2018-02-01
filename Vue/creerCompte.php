@@ -33,13 +33,13 @@
 			<main class="col-xs-12 col-sm-1 col-lg-1 col-xl-12">
 				<header class="page-header row justify-center" style="height: 74px;">
 					<div class="col-md-6 col-lg-8" >
-						<h1 class="float-left text-center text-md-left">Connexion</h1>
+						<h1 class="float-left text-center text-md-left">Création d'un compte</h1>
 					</div>
 					
 					
 					
 					<div class="clear">
-						<a href="creerCompte">Créer un compte</a>
+						<a href="seConnecter">Se connecter</a>
 					</div>
 				</header>
 				
@@ -50,16 +50,32 @@
 								<div class="card mb-4">
 									<div class="card-block">
 																				
-										<h6 class="card-subtitle mb-2 text-muted">Veuillez-vous identifier</h6>
+										<h6 class="card-subtitle mb-2 text-muted">Veuillez saisir vos informations</h6>
 										
-										<form class="form-horizontal" action="connexion" method="POST">
+										<form class="form-horizontal" action="creationCompte" method="POST">
 											<fieldset>
+												<!-- Nom input-->
+												<div class="form-group">
+													<label class="col-12 control-label no-padding" for="nom">Nom</label>
+													
+													<div class="col-12 no-padding">
+														<input id="nom" name="nom" type="text" placeholder="nom" class="form-control" required>
+													</div>
+												</div>
+												<!-- Prenom input-->
+												<div class="form-group">
+													<label class="col-12 control-label no-padding" for="prenom">Prenom</label>
+													
+													<div class="col-12 no-padding">
+														<input id="prenom" name="prenom" type="text" placeholder="prenom" class="form-control" required>
+													</div>
+												</div>
 												<!-- Email input-->
 												<div class="form-group">
 													<label class="col-12 control-label no-padding" for="email">E-mail</label>
 													
 													<div class="col-12 no-padding">
-														<input id="email" name="email" type="email" placeholder="email" class="form-control">
+														<input id="email" name="email" type="text" placeholder="email" class="form-control" required>
 													</div>
 												</div>
 
@@ -68,14 +84,14 @@
 													<label class="col-12 control-label no-padding" for="passwd">Mot de passe</label>
 													
 													<div class="col-12 no-padding">
-														<input id="passwd" name="passwd" type="password" placeholder="mot de passe" class="form-control">
+														<input id="passwd" name="passwd" type="password" placeholder="mot de passe" class="form-control" required>
 													</div>
 												</div>
 												
 												<!-- Form actions -->
 												<div class="form-group">
 													<div class="col-12 widget-right no-padding">
-														<button type="submit" class="btn btn-primary btn-md float-right">Se connecter</button>
+														<button type="submit" class="btn btn-primary btn-md float-right">Créer mon compte</button>
 													</div>
 												</div>
 											</fieldset>

@@ -8,4 +8,6 @@ RewriteEngine On
 RewriteRule seConnecter$ /domotique/index.php?action=seConnecter
 RewriteRule connexion$ /domotique/index.php?action=connexion
 RewriteRule home$ /domotique/index.php?action=home
-RewriteRule seDeconnecter$ /domotique/index.php?action=seDeconnecter [L]
+RewriteRule seDeconnecter$ /domotique/index.php?action=seDeconnecter
+RewriteRule creationCompte$ /domotique/index.php?action=creationCompte
+RewriteRule creerCompte$ /domotique/index.php?action=creerCompte [L]
