@@ -23,10 +23,28 @@
 			}
 		}
 
+		public static function changePrise($idPrise){
+			$priseGateway = new PriseGateway();
+			$etat = $priseGateway->changePrise($idPrise);
+			return $etat;
+		}
+
+		public static function etatBouton($idPrise){
+			$priseGateway = new PriseGateway();
+			$etat = $priseGateway->etatBouton($idPrise);
+			return $etat;
+		}
+
 		public static function getInfo($log){
 			$adminGateway = new AdminGateway();
 			$info = $adminGateway->isAdmin($log);
 			return $info;
+		}
+
+		public static function getTemperature(){
+			$temperatureGateway = new TemperatureGateway();
+			$temperature = $temperatureGateway->getTemperature();
+			return $temperature;
 		}
 
 		public static function creationCompte($nom, $prenom, $mail, $passwd){

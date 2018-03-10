@@ -11,6 +11,7 @@
 					case 'home':
 						global $vues;
 						$info = $this->getInfo();
+						$data = $this->getTemperature();
 						require $vues['home'];
 						break;
 						
@@ -24,6 +25,14 @@
 
 					case 'supprimerEquipement':
 						$this->supprimerEquipement();
+						break;
+
+					case 'etatBouton':
+						$this->etatBouton();
+						break;
+
+					case 'changePrise':
+						$this->changePrise();
 						break;
 
 					default:
@@ -76,6 +85,51 @@
 			else{
 				return null;
 			}
+		}
+
+		public function getTemperature(){
+			if (isset($_SESSION['login']) && isset($_SESSION['mdp'])) {
+				$log=Validation::sanitize($_SESSION['login'],gettype($_SESSION['login']));
+				$mdpBool=Validation::sanitize($_SESSION['mdp'],'text');
+				if ($mdpBool) {
+					$temperature=ModelAdmin::getTemperature();
+					return $temperature;
+				}
+				else{
+					return null;
+				}
+			}
+			else{
+				return null;
+			}
+		}
+
+		public function changePrise(){
+			$idPrise = $_POST['idPrise'];
+			if(!is_null($idPrise)) {
+				$idPrise = intval($idPrise, 10);
+				$etat=ModelAdmin::changePrise($idPrise);
+			}
+			else{
+				$etat="failed";
+			}
+			//$json["json"] = json_encode($etat);
+			//header('Content-Type: application/json');
+			echo json_encode($etat);
+		}
+
+		public function etatBouton(){
+			$idPrise = $_POST['idPrise'];
+			if(!is_null($idPrise)) {
+				$idPrise = intval($idPrise, 10);
+				$etat=ModelAdmin::etatBouton($idPrise);
+			}
+			else{
+				$etat="failed";
+			}
+			//$json["json"] = json_encode($etat);
+			//header('Content-Type: application/json');
+			echo json_encode($etat);
 		}
 
 		//Permet de passer d'administrateur à simple visiteur

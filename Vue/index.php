@@ -69,7 +69,8 @@
 			<main class="col-xs-12 col-sm-1 col-lg-1 col-xl-12">
 				<header class="page-header row justify-center">
 					<div class="col-md-6 col-lg-8" >
-						<h1 class="float-left text-center text-md-left">Dashboard</h1>
+						
+						<h1 class="float-left text-center text-md-left"><img src="https://upload.wikimedia.org/wikipedia/fr/thumb/3/3b/Raspberry_Pi_logo.svg/810px-Raspberry_Pi_logo.svg.png" style="width: 5%; height: auto;">PiHome</h1>
 					</div>
 					
 					<div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -82,9 +83,10 @@
 						</div>
 						</a>
 						
-						<div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="profil"><em class="fa fa-user-circle mr-1"></em> Modifier vos informations</a>
-						     <a class="dropdown-item" href="#"><em class="fa fa-sliders mr-1"></em> Ajouter équipement</a>
-						     <a class="dropdown-item" href="seDeconnecter"><em class="fa fa-power-off mr-1"></em> Déconnexion</a></div>
+						<div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;" aria-labelledby="dropdownMenuLink">
+							<!--<a class="dropdown-item" href="profil"><em class="fa fa-user-circle mr-1"></em> Modifier vos informations</a>
+						    <a class="dropdown-item" href="#"><em class="fa fa-sliders mr-1"></em> Ajouter équipement</a>-->
+						    <a class="dropdown-item" href="seDeconnecter"><em class="fa fa-power-off mr-1"></em> Déconnexion</a></div>
 					</div>
 					
 					<div class="clear"></div>
@@ -95,10 +97,10 @@
 						<section class="row">
 
 								<div id="drag7" class="camera">
-									<div class="contain" id="came" style="height: inherit; width: 342px">
+									<div class="contain" id="came" style="height: 607.5px;">
 										<div class="top-left"><h6>Cam #1</h6></div>
 									</div>
-									<div class="contain" style="height: inherit; width: 342px">
+									<!--<div class="contain" style="height: inherit; width: 342px">
 										<div class="top-left"><h6>Cam #2</h6></div>
 										<img style="width: inherit; height: inherit;" src="https://vignette2.wikia.nocookie.net/thedescendants/images/6/64/If_Only-Dove_Cameron16.png/revision/latest?cb=20150808153606">
 									</div>
@@ -113,27 +115,14 @@
 									<div class="contain" style="height: inherit; width: 342px">
 										<div class="top-left"><h6>Cam #4</h6></div>
 										<img style="width: inherit; height: inherit;" src="https://vignette2.wikia.nocookie.net/thedescendants/images/6/64/If_Only-Dove_Cameron16.png/revision/latest?cb=20150808153606">
-									</div>
+									</div>-->
 								</div>
 
 								<div id="drag8">
 									<table class="table table-striped" style="margin-bottom: 0px;">
 										<tbody>
 											<tr>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #4CAF50;"><h6>Prise 1</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #f44336;"><h6>Prise 2</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #4CAF50;"><h6>Prise 3</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #f44336;"><h6>Prise 4</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #4CAF50;"><h6>Prise 5</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #f44336;"><h6>Prise 6</h6></button></div></td>
-											</tr>
-											<tr>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #f44336;"><h6>Prise 7</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #4CAF50;"><h6>Prise 8</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #f44336;"><h6>Prise 9</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #4CAF50;"><h6>Prise 10</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #f44336;"><h6>Prise 11</h6></button></div></td>
-												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button style="background-color: #4CAF50;"><h6>Prise 12</h6></button></div></td>
+												<td style="text-align: -webkit-center; vertical-align: middle;"><div class="prise-table"><button id="prise1"><h6>Prise 1</h6></button></div></td>
 											</tr>
 										</tbody>
 									</table>
@@ -155,16 +144,15 @@
 										
 										<h6 class="card-subtitle mb-2 text-muted">Latest traffic stats</h6>
 										
-										<div class="canvas-wrapper">
-											<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
+										<div class="canvas-wrapper" id="chartdiv" style="width: 100%; height: 400px;"></div>
+								        <div style="margin-left:35px;">
+								            <input type="radio" name="group" id="rb1" onclick="setPanSelect()">Select
+								            <input type="radio" checked="true" name="group" id="rb2" onclick="setPanSelect()">Pan
 										</div>
 									</div>
 								</div>
 								
 								
-						</section>
-						<section class="row">
-							<div class="col-12 mt-1 mb-4">Template by <a href="https://www.medialoot.com">Medialoot</a></div>
 						</section>
 					</div>
 				</section>
@@ -185,27 +173,219 @@
     <script src="Vue/js/bootstrap-datepicker.js"></script>
     <script src="Vue/js/custom.js"></script>
     <script src="Vue/js/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
-    <script>
-	    window.onload = function () {
-		var chart1 = document.getElementById("line-chart").getContext("2d");
-		window.myLine = new Chart(chart1).Line(lineChartData, {
-		responsive: true,
-		scaleLineColor: "rgba(0,0,0,.2)",
-		scaleGridLineColor: "rgba(0,0,0,.05)",
-		scaleFontColor: "#c5c7cc"
-		});
-	};
-	</script>
+
+    <!--<link rel="stylesheet" href="./Vue/js/amcharts/style.css" type="text/css">-->
+    <script src="./Vue/js/amcharts/amcharts.js" type="text/javascript"></script>
+	<script src="./Vue/js/amcharts/serial.js" type="text/javascript"></script>
 
 	<script>
+            var chart;
+            var chartData = [];
+            var chartCursor;
+
+
+
+            AmCharts.ready(function () {
+                // generate some data first
+                generateChartData();
+
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+
+                chart.dataProvider = chartData;
+                chart.categoryField = "date";
+                chart.balloon.bulletSize = 5;
+                chart.dataDateFormat = "DD-MM-YYYY-HH-NN-SS";
+
+                // listen for "dataUpdated" event (fired when chart is rendered) and call zoomChart method when it happens
+                chart.addListener("dataUpdated", zoomChart);
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
+                categoryAxis.minPeriod = "ss"; // our data is every 10sec, so we set minPeriod to ss
+                categoryAxis.dashLength = 1;
+                categoryAxis.minorGridEnabled = true;
+                categoryAxis.twoLineMode = true;
+                categoryAxis.dateFormats = [{
+                    period: 'fff',
+                    format: 'JJ:NN:SS'
+                }, {
+                    period: 'ss',
+                    format: 'JJ:NN:SS'
+                }, {
+                    period: 'mm',
+                    format: 'JJ:NN'
+                }, {
+                    period: 'hh',
+                    format: 'JJ:NN'
+                }, {
+                    period: 'DD',
+                    format: 'DD'
+                }, {
+                    period: 'WW',
+                    format: 'DD'
+                }, {
+                    period: 'MM',
+                    format: 'MMM'
+                }, {
+                    period: 'YYYY',
+                    format: 'YYYY'
+                }];
+
+                categoryAxis.axisColor = "#DADADA";
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                valueAxis.dashLength = 1;
+                chart.addValueAxis(valueAxis);
+
+                // GRAPH
+                var graph = new AmCharts.AmGraph();
+                graph.title = "red line";
+                graph.valueField = "temperature";
+                graph.bullet = "round";
+                graph.bulletBorderColor = "#FFFFFF";
+                graph.bulletBorderThickness = 2;
+                graph.bulletBorderAlpha = 1;
+                graph.lineThickness = 2;
+                graph.lineColor = "#5fb503";
+                graph.negativeLineColor = "#efcc26";
+                graph.hideBulletsCount = 50; // this makes the chart to hide bullets when there are more than 50 series in selection
+                chart.addGraph(graph);
+
+                // CURSOR
+                chartCursor = new AmCharts.ChartCursor();
+                chartCursor.cursorPosition = "mouse";
+                chartCursor.pan = true; // set it to fals if you want the cursor to work in "select" mode
+                chart.addChartCursor(chartCursor);
+
+                // SCROLLBAR
+                var chartScrollbar = new AmCharts.ChartScrollbar();
+                chart.addChartScrollbar(chartScrollbar);
+
+                chart.creditsPosition = "bottom-right";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+
+            // generate some random data, quite different range
+            function generateChartData() {
+                /*var firstDate = new Date();
+                firstDate.setDate(firstDate.getDate() - 500);
+
+                for (var i = 0; i < 500; i++) {
+                    // we create date objects here. In your data, you can have date strings
+                    // and then set format of your dates using chart.dataDateFormat property,
+                    // however when possible, use date objects, as this will speed up chart rendering.
+                    var newDate = new Date(firstDate);
+                    newDate.setDate(newDate.getDate() + i);
+
+                    var visits = Math.round(Math.random() * 40) - 20;
+
+                    chartData.push({
+                        date: newDate,
+                        visits: visits
+                    });
+                }*/
+                <?php
+                	foreach ($data as $item){
+                ?>
+					   chartData.push({date: "<?php echo $item[0]?>", temperature: <?php echo round($item[1])?>});
+				<?php 
+					}
+				?>
+                console.log(chartData);
+            }
+
+            // this method is called when chart is first inited as we listen for "dataUpdated" event
+            function zoomChart() {
+                // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+                chart.zoomToIndexes(chartData.length - 40, chartData.length - 1);
+            }
+
+            // changes cursor mode from pan to select
+            function setPanSelect() {
+                if (document.getElementById("rb1").checked) {
+                    chartCursor.pan = false;
+                    chartCursor.zoomable = true;
+                } else {
+                    chartCursor.pan = true;
+                }
+                chart.validateNow();
+            }
+
+        </script>
+
+    <!--<script>
+    	var temperatureData = {
+			labels : ["January","February","March","April","May","June","July"],
+			datasets : [
+				{
+					label: "Temperature",
+					fillColor : "rgba(128,130,228,0.6)",
+					strokeColor : "rgba(128,130,228,1)",
+					pointColor : "rgba(128,130,228,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(128,130,228,1)",
+					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+				}
+			]
+
+		}
+
+	    window.onload = function () {
+			var chart1 = document.getElementById("myChart").getContext("2d");
+			window.myLine = new Chart(chart1).Line(temperatureData, {
+			responsive: true,
+			scaleLineColor: "rgba(0,0,0,.2)",
+			scaleGridLineColor: "rgba(0,0,0,.05)",
+			scaleFontColor: "#c5c7cc"
+			});
+		};
+	</script>-->
+
+	<!--<script>
+		var ctx = document.getElementById("myChart").getContext('2d');
+		var chart = new Chart(ctx, {
+		    // The type of chart we want to create
+		    type: 'line',
+
+		    // The data for our dataset
+		    data: {
+		        labels: ["January", "February", "March", "April", "May", "June", "July"],
+		        datasets: [{
+		            label: "My First dataset",
+		            backgroundColor: 'rgb(255, 99, 132)',
+		            borderColor: 'rgb(255, 99, 132)',
+		            data: [0, 10, 5, 2, 20, 30, 45],
+		        }]
+		    },
+
+		    // Configuration options go here
+		    options: {}
+		});
+	</script>-->
+
+	<script>
+		$("#drag1").css({"position":"absolute","width":"40%","height":"auto","top":"0px","left":"0px","cursor":"move","z-index":"100","max-width": "1021.200px"})
+		$("#drag7").css({"position":"absolute","width":"auto","height":"auto","top":"0px","left":"41%","cursor":"move","z-index":"100","max-width": "1080px","display":"inline-flex","overflow-x":"scroll","white-space": "nowrap","overflow-y":"hidden"})
+		$("#drag8").css({"position":"absolute","width":"auto","height":"auto","top":"550px","left":"0px","cursor":"move","z-index":"100","max-width": "1021.200px"})
+	</script>
+
+	<!--<script>
 	$.cookie("example", "foo", { expires: 10 * 365 * 24 * 60 * 60 , path: '/'});
 	$(function(){
 		var nb = $('#drag7 > div').length;
 		var taille = nb * 342;
 		//样式
-		$("#drag1").css({"position":"absolute","width":"auto","height":"auto","top":"0px","left":"0px","cursor":"move","z-index":"100","max-width": "1021.200px"})
-		$("#drag7").css({"position":"absolute","width":"auto","height":"191.475px","top":"122px","left":"660px","cursor":"move","z-index":"100","max-width": "1021.200px","display":"inline-flex","overflow-x":"scroll","white-space": "nowrap","overflow-y":"hidden"})
-		$("#drag8").css({"position":"absolute","width":"auto","height":"auto","top":"0px","left":"660px","cursor":"move","z-index":"100","max-width": "1021.200px"})
+		$("#drag1").css({"position":"absolute","width":"48%","height":"auto","top":"0px","left":"0px","cursor":"move","z-index":"100","max-width": "1021.200px"})
+		$("#drag7").css({"position":"absolute","width":"auto","height":"auto","top":"0px","left":"660px","cursor":"move","z-index":"100","max-width": "1080px","display":"inline-flex","overflow-x":"scroll","white-space": "nowrap","overflow-y":"hidden"})
+		$("#drag8").css({"position":"absolute","width":"auto","height":"auto","top":"324px","left":"0px","cursor":"move","z-index":"100","max-width": "1021.200px"})
 		
 		var dragging1 = false;
 		var dragging7 = false;
@@ -276,7 +456,7 @@
 			}
 		})
 	})
-		</script>
+	</script>-->
     	<script type="text/javascript" src="https://css-tricks.com/examples/HorzScrolling/jquery.mousewheel.js"></script>
 		<script>
 			$(document).ready(function () {
@@ -290,18 +470,101 @@
 
 		<script type="text/javascript" src="Vue/js/http-live-player.js"></script>
 	    <script>
-	        window.onload = function() {
+	        $(document).ready(function() {
                 var canvas = document.createElement("canvas");
                 document.getElementById("came").appendChild(canvas);
 
-                canvas.style.width="342px";
-                canvas.style.height="191.47px";
+                canvas.style.width="1080px";
+                canvas.style.height="607.5px";
 
                 var wsavc = new WSAvcPlayer(canvas, "webgl");
 
                 var protocol = window.location.protocol === "https:" ? "wss:" : "ws:"
                 wsavc.connect(protocol + '//paoriginal.hopto.org:3000/video-stream');
-            }
+            })
+	   	</script>
+
+	   	<script>
+	   		$(document).ready(function() {
+	   			var wss=new WebSocket("wss://paoriginal.hopto.org:8081/arduino/relay");
+
+		        wss.onopen = function() {
+		        };
+
+		        wss.onmessage = function (evt) {
+		          var received_msg = evt.data;
+		          console.log(received_msg);
+		          /*if (received_msg == "success") {
+		          	$.ajax({
+				        type: "POST",
+				        url: "/domotique/changePrise",
+				        data: { idPrise: "1" },
+				        dataType: "json",
+				        success: function (success) {
+				        	console.log(success);
+				            if (success == "0") {
+								//vert
+								$('#prise1').css({"background-color": "#4CAF50"});
+				        	}
+				        	else{
+				        		if (success == "1") {
+				        			//rouge
+									$('#prise1').css({"background-color": "#f44336"});
+				        		}
+				        		else{
+				        			alert("Erreur...");
+				        		}
+				        	}
+				        },
+				        error: function (error) {
+				            alert(error);
+				        }
+				    });
+		          }*/
+		          //alert("Message is received...");
+		        };
+
+		        wss.onclose = function() {
+		          // websocket is closed.
+		          alert("Connection is closed...");
+		        };
+
+		        $('#close').click(function () {
+		            wss.close();
+		        })
+
+
+		        $('#prise1').click(function () {
+				    $.ajax({
+				        type: "POST",
+				        url: "/domotique/etatBouton",
+				        data: { idPrise: "1" },
+				        dataType: "json",
+				        success: function (success) {
+				        	//console.log(success);
+				            if (success == "0") {
+								wss.send("ON");
+								//vert
+								$('#prise1').css({"background-color": "#4CAF50"});
+				        	}
+				        	else{
+				        		if (success == "1") {
+				        			wss.send("OFF");
+				        			//rouge
+									$('#prise1').css({"background-color": "#f44336"});
+				        		}
+				        		else{
+				        			alert("Erreur...");
+				        		}
+				        	}
+				        },
+				        error: function (error) {
+				            alert(error);
+				        }
+				    });
+		        })
+	   		})
+	   		
 	   	</script>
     
 	  </body>

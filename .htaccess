@@ -10,4 +10,6 @@ RewriteRule connexion$ /domotique/index.php?action=connexion
 RewriteRule home$ /domotique/index.php?action=home
 RewriteRule seDeconnecter$ /domotique/index.php?action=seDeconnecter
 RewriteRule creationCompte$ /domotique/index.php?action=creationCompte
+RewriteRule etatBouton$ /domotique/index.php?action=etatBouton
+RewriteRule changePrise$ /domotique.index.php?action=changePrise
 RewriteRule creerCompte$ /domotique/index.php?action=creerCompte [L]
