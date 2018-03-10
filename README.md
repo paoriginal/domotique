@@ -1,7 +1,7 @@
 # domotique
 
 Ajouter un fichier "config.php" dans le dossier "Config" avec ce contenu : 
-
+```
 <?php
 
 
@@ -24,3 +24,4 @@ $vues['home']='Vue/index.php';
 $vues['seConnecter']='Vue/ConnectionAdmin.php';
 $vues['creationCompte']='Vue/creerCompte.php';
 ?>
+```
